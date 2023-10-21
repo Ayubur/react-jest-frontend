@@ -13,7 +13,7 @@ describe('[GAME] GameBox', () => {
     const orginalWidth = window.innerWidth;
     window.innerWidth = 1000;
 
-    render(<GameBox><CampaignBanner /><StartButton /></GameBox>);
+    render(<GameBox children={<></>} />);
     const element = screen.getByTestId(TestElement.GAME_BOX);
     expect(element).toHaveStyle(`
       maxWidth: ${gameConfig.container.maxWidth}px;
@@ -28,7 +28,7 @@ describe('[GAME] GameBox', () => {
     const orginalHeight = window.innerHeight;
     window.innerWidth = 300;
     window.innerHeight = 1000;
-    render(<GameBox><CampaignBanner /><StartButton /></GameBox>);
+    render(<GameBox children={<></>} />);
     const element = screen.getByTestId(TestElement.GAME_BOX);
     const computedStyle = getComputedStyle(element);
     expect(computedStyle.width).toBe("300px");
@@ -41,7 +41,7 @@ describe('[GAME] GameBox', () => {
     const orginalHeight = window.innerHeight;
     window.innerWidth = 1000;
     window.innerHeight = 600;
-    render(<GameBox><CampaignBanner /><StartButton /></GameBox>);
+    render(<GameBox children={<></>} />);
     const element = screen.getByTestId(TestElement.GAME_BOX);
     const computedStyle = getComputedStyle(element);
     expect(computedStyle.height).toBe("600px");
